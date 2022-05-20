@@ -26,8 +26,8 @@
         <!--MyShopping-->
         <scene sceneID="Bxb-bI-x1X">
             <objects>
-                <tableViewController id="avg-pi-3nE" customClass="ShoppingListTableViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="Hds-x7-WNG">
+                <tableViewController storyboardIdentifier="ShoppingTableViewController" id="avg-pi-3nE" customClass="ShoppingTableViewController" customModule="MyShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="Hds-x7-WNG" customClass="Sh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,7 +57,6 @@
                                             </buttonConfiguration>
                                             <connections>
                                                 <action selector="didTapAddButtoned:" destination="nee-02-xpV" eventType="touchUpInside" id="5Ij-n6-9ju"/>
-                                                <action selector="didTapListMakerButton:" destination="nee-02-xpV" eventType="touchUpInside" id="Xjz-av-1N1"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -74,9 +73,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="addButton" destination="ZV8-O2-LjS" id="uTW-QI-FsQ"/>
-                                    <outlet property="listMakerButton" destination="ZV8-O2-LjS" id="6fx-l6-R0g"/>
-                                    <outlet property="listMakerTextField" destination="nmp-XA-oVc" id="2Ar-9n-8c9"/>
-                                    <outlet property="shoppingTextField" destination="nmp-XA-oVc" id="hYe-e1-neR"/>
+                                    <outlet property="shoppingTextField" destination="nmp-XA-oVc" id="N6c-vY-kyE"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingTableViewCell" id="hFn-5L-uFM" customClass="ShoppingTableViewCell" customModule="MyShoppingList" customModuleProvider="target">
@@ -92,7 +89,6 @@
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" image="star" catalog="system"/>
                                             <connections>
-                                                <action selector="didTapButtonInList:" destination="hFn-5L-uFM" eventType="touchUpInside" id="pcI-h4-2mi"/>
                                                 <action selector="didTapFavoriteButton:" destination="hFn-5L-uFM" eventType="touchUpInside" id="RLQ-XO-TYy"/>
                                             </connections>
                                         </button>
@@ -109,7 +105,6 @@
                                             <state key="normal" image="checkmark.square" catalog="system"/>
                                             <buttonConfiguration key="configuration" style="plain" image="checkmark.square" catalog="system"/>
                                             <connections>
-                                                <action selector="didTapButtonInList:" destination="hFn-5L-uFM" eventType="touchUpInside" id="v1b-Fg-x2p"/>
                                                 <action selector="didTapCheckButton:" destination="hFn-5L-uFM" eventType="touchUpInside" id="ya2-OE-bkf"/>
                                             </connections>
                                         </button>
@@ -130,7 +125,6 @@
                                     <outlet property="checkButton" destination="GNU-hB-vMx" id="99T-vm-CTe"/>
                                     <outlet property="favoriteButton" destination="WnO-PZ-t8c" id="Ytn-q8-Slm"/>
                                     <outlet property="shoppingLabel" destination="39N-Vq-AAg" id="73t-n5-3OY"/>
-                                    <outlet property="shoppingListLabel" destination="39N-Vq-AAg" id="tA7-yg-aTs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -145,30 +139,16 @@
                             <barButtonItem title="백업" id="3Bv-v8-neN">
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <connections>
-                                    <action selector="backupButtonClicked:" destination="avg-pi-3nE" id="9Jp-bB-tjt"/>
+                                    <action selector="backupButtonClicked:" destination="avg-pi-3nE" id="dLl-8z-M0N"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="복구" id="UwV-Cg-Ess">
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <connections>
-                                    <action selector="restoreButtonClicked:" destination="avg-pi-3nE" id="0ak-Sc-U2q"/>
+                                    <action selector="restoreButtonClicked:" destination="avg-pi-3nE" id="7A2-ne-cLC"/>
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
-                        <rightBarButtonItems>
-                            <barButtonItem title="정렬" id="kKV-oS-PZG">
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <connections>
-                                    <action selector="sortBarButtonClicked:" destination="avg-pi-3nE" id="ntd-Tr-VUQ"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="카테고리" id="kCS-Ju-fJq">
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <connections>
-                                    <action selector="categoryBarButtonClicked:" destination="avg-pi-3nE" id="KiL-QK-dau"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Sy-tl-5yn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

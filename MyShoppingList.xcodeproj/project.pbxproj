@@ -24,6 +24,10 @@
 		1B311063283682B400699A47 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B311062283682B400699A47 /* Consts.swift */; };
 		1B311065283682D200699A47 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B311064283682D200699A47 /* CustomCell.swift */; };
 		1B3110682836851D00699A47 /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3110672836851D00699A47 /* ShoppingItem.swift */; };
+		1B31106B283686D300699A47 /* ShoppingEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31106A283686D300699A47 /* ShoppingEnum.swift */; };
+		1B31106D2836874800699A47 /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31106C2836874800699A47 /* ShoppingTableViewController.swift */; };
+		1B311070283717D600699A47 /* RealmShppoingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31106F283717D600699A47 /* RealmShppoingService.swift */; };
+		1B311072283718EE00699A47 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B311071283718EE00699A47 /* RealmRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		1B311062283682B400699A47 /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		1B311064283682D200699A47 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		1B3110672836851D00699A47 /* ShoppingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
+		1B31106A283686D300699A47 /* ShoppingEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingEnum.swift; sourceTree = "<group>"; };
+		1B31106C2836874800699A47 /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
+		1B31106F283717D600699A47 /* RealmShppoingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmShppoingService.swift; sourceTree = "<group>"; };
+		1B311071283718EE00699A47 /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,8 @@
 		1B3110372836810C00699A47 /* MyShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				1B31106E283717C300699A47 /* DB */,
+				1B311069283686C600699A47 /* Enums */,
 				1B3110662836850700699A47 /* Model */,
 				1B311061283682A600699A47 /* Consts */,
 				1B3110382836810C00699A47 /* AppDelegate.swift */,
@@ -86,6 +96,7 @@
 				1B31105F2836828900699A47 /* ShoppingAddTableViewCell.swift */,
 				1B31103C2836810C00699A47 /* ViewController.swift */,
 				1B31103E2836810C00699A47 /* Main.storyboard */,
+				1B31106C2836874800699A47 /* ShoppingTableViewController.swift */,
 				1B3110412836810D00699A47 /* Assets.xcassets */,
 				1B3110432836810D00699A47 /* LaunchScreen.storyboard */,
 				1B3110462836810D00699A47 /* Info.plist */,
@@ -108,6 +119,23 @@
 				1B3110672836851D00699A47 /* ShoppingItem.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1B311069283686C600699A47 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				1B31106A283686D300699A47 /* ShoppingEnum.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		1B31106E283717C300699A47 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				1B31106F283717D600699A47 /* RealmShppoingService.swift */,
+				1B311071283718EE00699A47 /* RealmRepository.swift */,
+			);
+			path = DB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,13 +225,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B31103D2836810C00699A47 /* ViewController.swift in Sources */,
+				1B311070283717D600699A47 /* RealmShppoingService.swift in Sources */,
 				1B311063283682B400699A47 /* Consts.swift in Sources */,
 				1B3110602836828900699A47 /* ShoppingAddTableViewCell.swift in Sources */,
+				1B31106D2836874800699A47 /* ShoppingTableViewController.swift in Sources */,
+				1B311072283718EE00699A47 /* RealmRepository.swift in Sources */,
 				1B31105E2836823300699A47 /* ShoppingTableViewCell.swift in Sources */,
 				1B3110682836851D00699A47 /* ShoppingItem.swift in Sources */,
 				1B3110392836810C00699A47 /* AppDelegate.swift in Sources */,
 				1B311065283682D200699A47 /* CustomCell.swift in Sources */,
 				1B31103B2836810C00699A47 /* SceneDelegate.swift in Sources */,
+				1B31106B283686D300699A47 /* ShoppingEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

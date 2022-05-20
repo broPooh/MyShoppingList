@@ -45,19 +45,25 @@ class ShoppingTableViewCell: UITableViewCell {
     
     }
     
-    func configure() {
-        
+    func configure(item: ShoppingItem) {
+        print(item)
+        shoppingLabel.text = item.title
+        isChecked = item.isChecked
+        isFavorite = item.isFavorite
     }
     
     
     @IBAction func didTapCheckButton(_ sender: UIButton) {
+        print("checked", isChecked)
         isChecked.toggle()
         delegate?.didTapCheckButton(row: sender.tag, status: isChecked)
     }
     
     
     @IBAction func didTapFavoriteButton(_ sender: UIButton) {
+        print("favorite", isFavorite)
         isFavorite.toggle()
+        print("favoriteChecked", isFavorite)
         delegate?.didTapFavoriteButton(row: sender.tag, status: isFavorite)
     }
     

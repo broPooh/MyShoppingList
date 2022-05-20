@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class Shopping: Object {
+class ShoppingItem: Object {
     //PK(필수) : Int, String, UUID, ObjectId -> AutoIncrement
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var title: String
