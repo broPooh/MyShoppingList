@@ -10,9 +10,9 @@ import RealmSwift
 import Zip
 import MobileCoreServices
 
-enum ShoppingSection: Int {
-    case add = 0
-    case item = 1
+enum ShoppingSection: Int, CaseIterable {
+    case add
+    case item
 }
 
 class ShoppingTableViewController: UITableViewController {
@@ -88,12 +88,12 @@ class ShoppingTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return ShoppingSection.allCases.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return section == 0 ? 1 : shoppingItemList.count
+        return section == ShoppingSection.add.rawValue ? ShoppingSection.item.rawValue : shoppingItemList.count
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -179,6 +179,7 @@ extension ShoppingTableViewController: UIDocumentPickerDelegate {
         else { return }
         
         let fileURL = documentURL.appendingPathComponent(selectedFileURL.lastPathComponent)
+        print(fileURL)
         do {
             try FileManager.default.copyItem(at: selectedFileURL, to: fileURL)
             try Zip.unzipFile(fileURL,

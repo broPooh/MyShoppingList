@@ -17,6 +17,10 @@ final class RealmShppoingService: RealmRepository {
     static let shared = RealmShppoingService()
     private let localRealm = try! Realm()
     
+    private init() {
+        
+    }
+    
     func loadDatas() -> Results<ShoppingItem> {
         return localRealm.objects(ShoppingItem.self)
     }
